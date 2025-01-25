@@ -80,53 +80,53 @@ local FixLagButton = Section:AddButton({
 
 -- Slider, Input, Dropdown...
 
--- Biến kiểm tra trạng thái của UI (mở hay đóng)
-local uiOpen = true  -- Ban đầu UI mở
+-- Biến kiểm tra trạng thái của UI (mở hay đóng)  
+local uiOpen = true  -- Ban đầu UI mở  
 
--- Hàm đóng UI
-local function closeUI()
-    Window:Hide()  -- Ẩn UI
-    uiOpen = false  -- Đánh dấu UI đã đóng
-end
+-- Hàm đóng UI  
+local function closeUI()  
+    Window:Hide()  -- Ẩn UI  
+    uiOpen = false  -- Đánh dấu UI đã đóng  
+end  
 
--- Hàm mở UI
-local function openUI()
-    Window:Show()  -- Hiển thị UI
-    uiOpen = true  -- Đánh dấu UI đã mở
-end
+-- Hàm mở UI  
+local function openUI()  
+    Window:Show()  -- Hiển thị UI  
+    uiOpen = true  -- Đánh dấu UI đã mở  
+end  
 
--- Hàm chuyển đổi UI (đóng/mở)
-local function toggleUI()
-    if uiOpen then
-        closeUI()  -- Nếu UI đang mở thì đóng
-    else
-        openUI()  -- Nếu UI đang đóng thì mở
-    end
-end
+-- Hàm chuyển đổi UI (đóng/mở)  
+local function toggleUI()  
+    if uiOpen then  
+        closeUI()  -- Nếu UI đang mở thì đóng  
+    else  
+        openUI()  -- Nếu UI đang đóng thì mở  
+    end  
+end  
 
--- Lắng nghe sự kiện nhấn phím để đóng/mở UI
-local UserInputService = game:GetService("UserInputService")
+-- Lắng nghe sự kiện nhấn phím để đóng/mở UI  
+local UserInputService = game:GetService("UserInputService")  
 
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end  -- Nếu sự kiện đã được trò chơi xử lý, bỏ qua
+UserInputService.InputBegan:Connect(function(input, gameProcessed)  
+    if gameProcessed then return end  -- Nếu sự kiện đã được trò chơi xử lý, bỏ qua  
 
-    if input.KeyCode == Enum.KeyCode.End then  -- Khi nhấn phím F1
-        toggleUI()  -- Chuyển đổi trạng thái UI
-    end
-end)
+    if input.KeyCode == Enum.KeyCode.LeftControl then  -- Khi nhấn phím Ctrl bên trái  
+        toggleUI()  -- Chuyển đổi trạng thái UI  
+    end  
+end)  
 
--- Bạn cũng có thể thêm một nút "Đóng/Mở UI" trong giao diện nếu muốn
-local ToggleButton = Window:CreateTab({
-    ["Name"] = "Đóng & mở",
-    ["Icon"] = "rbxassetid://7734053495"
-})
+-- Bạn cũng có thể thêm một nút "Đóng/Mở UI" trong giao diện nếu muốn  
+local ToggleButton = Window:CreateTab({  
+    ["Name"] = "Đóng & mở",  
+    ["Icon"] = "rbxassetid://7734053495"  
+})  
 
-local SectionToggle = ToggleButton:AddSection("Toggle UI")
-local ToggleUIButton = SectionToggle:AddButton({
-    ["Title"] = "Đóng/Mở UI",
-    ["Content"] = "Nhấn để đóng hoặc mở UI",
-    ["Icon"] = "rbxassetid://16932740082",
-    ["Callback"] = function()
-        toggleUI()  -- Khi nhấn vào nút, chuyển đổi trạng thái UI
-    end
+local SectionToggle = ToggleButton:AddSection("Toggle UI")  
+local ToggleUIButton = SectionToggle:AddButton({  
+    ["Title"] = "Đóng/Mở UI",  
+    ["Content"] = "Nhấn để đóng hoặc mở UI",  
+    ["Icon"] = "rbxassetid://16932740082",  
+    ["Callback"] = function()  
+        toggleUI()  -- Khi nhấn vào nút, chuyển đổi trạng thái UI  
+    end  
 })
