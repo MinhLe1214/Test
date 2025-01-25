@@ -110,14 +110,14 @@ local UserInputService = game:GetService("UserInputService")
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if gameProcessed then return end  -- Nếu sự kiện đã được trò chơi xử lý, bỏ qua
 
-    if input.KeyCode == Enum.KeyCode.F1 then  -- Khi nhấn phím F1
+    if input.KeyCode == Enum.KeyCode.End then  -- Khi nhấn phím F1
         toggleUI()  -- Chuyển đổi trạng thái UI
     end
 end)
 
 -- Bạn cũng có thể thêm một nút "Đóng/Mở UI" trong giao diện nếu muốn
 local ToggleButton = Window:CreateTab({
-    ["Name"] = "Cài đặt",
+    ["Name"] = "Đóng & mở",
     ["Icon"] = "rbxassetid://7734053495"
 })
 
