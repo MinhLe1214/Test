@@ -5,7 +5,7 @@ local Notify = UiMakeLib:MakeNotify({
     ["Title"] = "Night Hub",
     ["Description"] = "Notification",
     ["Color"] = Color3.fromRGB(75, 0, 130),
-    ["Content"] = "Welcome to Fluriore UI",
+    ["Content"] = "Chào đây là script của Night",
     ["Time"] = 1,
     ["Delay"] = 10
 })
