@@ -60,6 +60,15 @@ local MenuGangtenButton = Section:AddButton({
     end  
 })  
 
+local MenuGangtenButton = Section:AddButton({  
+    Title = "Rubu",  
+    Content = "script lấy từ server dis của night",  
+    Icon = "rbxassetid://16932740082",  
+    Callback = function()  
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/RubuRoblox/refs/heads/main/RubuBF"))()  
+    end  
+})  
+
 local WazureButton = Section:AddButton({  
     Title = "W azure",  
     Content = "Hỗ trợ máy yếu(có cái Đb lỗi r)",  
