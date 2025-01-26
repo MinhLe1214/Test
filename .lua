@@ -110,19 +110,4 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if input.KeyCode == Enum.KeyCode.F4 then  
         toggleUI()  
     end  
-end)  
-
-local ToggleButton = Window:CreateTab({  
-    Name = "Đóng & mở",  
-    Icon = "rbxassetid://7734053495"  
-})  
-
-local SectionToggle = ToggleButton:AddSection("Toggle UI")  
-local ToggleUIButton = SectionToggle:AddButton({  
-    Title = "Đóng/Mở UI",  
-    Content = "Nhấn để đóng hoặc mở UI",  
-    Icon = "rbxassetid://16932740082",  
-    Callback = function()  
-        toggleUI()  
-    end  
-})
+end)
