@@ -62,7 +62,7 @@ local MenuGangtenButton = Section:AddButton({
 
 local WazureButton = Section:AddButton({
     ["Title"] = "W azure",
-    ["Content"] = "Hỗ trợ máy yếu(có cái Đb)",
+    ["Content"] = "Hỗ trợ máy yếu(có cái Đb lỗi r)",
     ["Icon"] = "rbxassetid://101558177339422",
     ["Callback"] = function()
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
@@ -80,7 +80,7 @@ local FixLagButton = Section:AddButton({
 
 local TweenService = game:GetService("TweenService")  -- Dịch vụ hoạt ảnh  
 local uiOpen = true  -- UI mở ban đầu  
-local Window = ... -- Bình thường bạn sẽ tạo và thiết lập Window của bạn ở đây  
+local Window = true -- Bình thường bạn sẽ tạo và thiết lập Window của bạn ở đây  
 
 local function closeUI()  
     local tween = TweenService:Create(Window, TweenInfo.new(0.5), {Size = UDim2.new(0, 0, 1, 0)})  -- Bạn có thể điều chỉnh kích thước tùy ý  
@@ -110,7 +110,7 @@ local UserInputService = game:GetService("UserInputService")
 UserInputService.InputBegan:Connect(function(input, gameProcessed)  
     if gameProcessed then return end  
 
-    if input.KeyCode == Enum.KeyCode.LeftControl then  
+    if input.KeyCode == Enum.KeyCode.F4 then  
         toggleUI()  
     end  
 end)  
